@@ -1,6 +1,6 @@
-RSpec.describe Ruby::Liquid do
+RSpec.describe Liquid do
   it "has a version number" do
-    expect(Ruby::Liquid::VERSION).not_to be nil
+    expect(Liquid::VERSION).not_to be nil
   end
 
   it "does something useful" do
