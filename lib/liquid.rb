@@ -1,10 +1,13 @@
+require 'uri'
+require 'net/http'
+require 'time'
+require 'jwt'
+
 require_relative "liquid/version"
+require_relative "liquid/client"
 
 module Liquid
-  class Error < StandardError; end
-  def self.hello
-    pp Liquid::VERSION
+  def self.new(token, secret)
+    Liquid::Client.new(token, secret)
   end
 end
-
-Liquid.hello
