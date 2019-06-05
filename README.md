@@ -24,8 +24,10 @@ Or install it yourself as:
     $ gem install ruby-liquid
 
 ## Usage
-
-wip
+```rb
+irb(main):014:0> require 'ruby-liquid'
+=> true
+```
 
 ## Contributing
 
