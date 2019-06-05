@@ -56,7 +56,7 @@ module Liquid
         request.add_field('X-Quoine-Auth', signature)
         request.add_field('Content-Type', 'application/json')
         response = http.request(request)
-        # error handling
+        # TODO: error handling
         JSON.parse(response.body)
       end
 
