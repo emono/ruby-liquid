@@ -4,10 +4,10 @@ module Liquid
 
     URL = "https://api.liquid.com"
 
-    def initialize
+    def initialize(token, secret)
       @http = http
-      @token_id = ENV["LIQUID_KEY"]
-      @user_secret = ENV["LIQUID_SECRET"]
+      @token_id = token || ENV["LIQUID_KEY"]
+      @user_secret = secret || ENV["LIQUID_SECRET"]
     end
 
     def product

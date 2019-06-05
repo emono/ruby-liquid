@@ -8,7 +8,8 @@ require_relative "liquid/version"
 require_relative "liquid/client"
 
 module Liquid
-  def self.new
+
+  def self.new(token, secret)
     Liquid::Client.new
   end
 end
