@@ -1,6 +1,6 @@
 [![Gem Version](https://badge.fury.io/rb/ruby-liquid.svg)](https://badge.fury.io/rb/ruby-liquid)
-[![Build Status](https://travis-ci.org/emono/ruby-liquid.svg?branch=master)](https://travis-ci.org/emono/ruby-liquid)
-[![download](https://travis-ci.org/emono/ruby-liquid.svg?branch=master)](https://img.shields.io/gem/dt/ruby-liquid.svg)
+[![Build Status](https://travis-ci.org/emono/ruby-liquid.svg?branch=master)](https://rubygems.org/gems/ruby-liquid)
+[![download](https://img.shields.io/gem/dt/ruby-liquid.svg)](https://rubygems.org/gems/ruby-liquid)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 # Liquid
