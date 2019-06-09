@@ -25,8 +25,11 @@ Or install it yourself as:
 
 ## Usage
 ```rb
-irb(main):014:0> require 'ruby-liquid'
-=> true
+require 'ruby-liquid'
+Liquid::Client.new(token, secret).product
+Liquid::Client.new(token, secret).product_id("BCHJPY")
+Liquid::Client.new(token, secret).create_order(pair: "BCHJPY", side: 'buy', quantity: 0.01, price: 40000)
+
 ```
 
 ## Contributing

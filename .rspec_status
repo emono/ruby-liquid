@@ -1,5 +1,5 @@
 example_id                   | status | run_time        |
 ---------------------------- | ------ | --------------- |
-./spec/liquid_spec.rb[1:1]   | passed | 0.00168 seconds |
-./spec/liquid_spec.rb[1:2:1] | passed | 0.57795 seconds |
-./spec/liquid_spec.rb[1:3:1] | passed | 0.42028 seconds |
+./spec/liquid_spec.rb[1:1]   | passed | 0.00097 seconds |
+./spec/liquid_spec.rb[1:2:1] | passed | 0.18417 seconds |
+./spec/liquid_spec.rb[1:3:1] | passed | 0.2375 seconds  |

@@ -1,6 +1,6 @@
 RSpec.describe Liquid do
   it "has a version number" do
-    expect(Liquid::VERSION).to eq("0.1.2")
+    expect(Liquid::VERSION).to eq("0.1.3")
   end
 
   context ".product_detail" do
@@ -13,7 +13,7 @@ RSpec.describe Liquid do
 
   context ".product_id" do
     let(:pair) { "BTCJPY" }
-    let(:id) { "5" }
+    let(:id) { 5 }
     let(:res){ Liquid.new.product_id(pair) }
     it "BTCJPY's id is 5" do
       expect(res).to eq(id)
