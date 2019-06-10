@@ -26,10 +26,10 @@ Or install it yourself as:
 ## Usage
 ```rb
 require 'ruby-liquid'
-Liquid::Client.new(token, secret).product
-Liquid::Client.new(token, secret).product_id("BCHJPY")
-Liquid::Client.new(token, secret).create_order(pair: "BCHJPY", side: 'buy', quantity: 0.01, price: 40000)
-
+liquid_client = Liquid::Client.new(token: token, secret: secret)
+liquid_client.product
+liquid_client.product_id("BCHJPY")
+liquid_client.create_order(pair: "BCHJPY", side: 'buy', quantity: 0.01, price: 40000)
 ```
 
 ## Contributing
