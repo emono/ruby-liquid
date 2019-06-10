@@ -31,9 +31,14 @@ liquid_client = Liquid::Client.new(token: token, secret: secret)
 liquid_client.product
 liquid_client.product_id("BCHJPY")
 liquid_client.orders
+liquid_client.active_orders
 liquid_client.balance
+liquid_client.limit_buy_price
+liquid_client.limit_sell_price
 # post
 liquid_client.create_order(pair: "BCHJPY", side: 'buy', quantity: 0.01, price: 40000)
+# put
+liquid_client.cancel_order(id)
 ```
 
 ## Contributing
