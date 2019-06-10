@@ -1,11 +1,10 @@
 module Liquid
   class Client
     class InvalidArgument < StandardError; end
+    class ResponseParseError < StandardError; end
 
     attr_reader :http, :token_id, :user_secret, :path, :params
     attr_accessor :url
-
-    
 
     def initialize(token, secret)
       @url = "https://api.liquid.com"
@@ -14,7 +13,7 @@ module Liquid
       @user_secret = secret || ENV["LIQUID_SECRET"]
     end
 
-    # get
+    # GET
     def product
       @path = '/products'
       get_request
@@ -22,6 +21,11 @@ module Liquid
 
     def orders
       @path = '/orders'
+      get_request
+    end
+
+    def active_orders
+      @path = '/orders?status=live'
       get_request
     end
 
@@ -40,15 +44,15 @@ module Liquid
       product_detail(pair)["id"].to_i
     end
 
-    def taker_buy_price(pair)
+    def limit_buy_price(pair)
       product_detail(pair)["market_bid"].to_f
     end
 
-    def taker_sell_price(pair)
+    def limit_sell_price(pair)
       product_detail(pair)["market_ask"].to_f
     end
 
-    # post
+    # POST
     def create_order(order_type: "limit", pair: nil, side: nil, quantity: nil, price: nil)
       pair_id = product_id(pair)
       raise InvalidArgument if side.nil? || quantity.nil? || price.nil?
@@ -66,6 +70,12 @@ module Liquid
       post_request
     end
 
+    # PUT
+    def cancel_order(id)
+      @path = "/orders/#{id}/cancel"
+      put_request
+    end
+
     private
       def http
         uri = URI.parse(url)
@@ -76,23 +86,30 @@ module Liquid
 
       def get_request
         request = Net::HTTP::Get.new(path)
-        request.add_field('X-Quoine-API-Version', '2')
-        request.add_field('X-Quoine-Auth', signature)
-        request.add_field('Content-Type', 'application/json')
-        response = http.request(request)
-        # TODO: error handling
-        JSON.parse(response.body)
+        request(request)
       end
 
       def post_request
         request = Net::HTTP::Post.new(path)
         request.body = @params
+        request(request)
+      end
+
+      def put_request
+        request = Net::HTTP::Put.new(path)
+        request(request)
+      end
+
+      def request(request)
         request.add_field('X-Quoine-API-Version', '2')
         request.add_field('X-Quoine-Auth', signature)
         request.add_field('Content-Type', 'application/json')
         response = http.request(request)
-        # TODO: error handling
-        JSON.parse(response.body)
+        begin
+          JSON.parse(response.body)
+        rescue JSON::ParserError 
+          raise ResponseParseError
+        end
       end
 
       def auth_payload
