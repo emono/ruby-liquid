@@ -27,8 +27,12 @@ Or install it yourself as:
 ```rb
 require 'ruby-liquid'
 liquid_client = Liquid::Client.new(token: token, secret: secret)
+# get
 liquid_client.product
 liquid_client.product_id("BCHJPY")
+liquid_client.orders
+liquid_client.balance
+# post
 liquid_client.create_order(pair: "BCHJPY", side: 'buy', quantity: 0.01, price: 40000)
 ```
 

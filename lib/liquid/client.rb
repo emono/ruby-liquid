@@ -20,6 +20,16 @@ module Liquid
       get_request
     end
 
+    def orders
+      @path = '/orders'
+      get_request
+    end
+
+    def balance
+      @path = '/accounts/balance'
+      get_request
+    end
+
     def product_detail(pair)
       product.select{|p|
         p["currency_pair_code"] == pair
