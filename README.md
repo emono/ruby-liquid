@@ -5,7 +5,8 @@
 
 # Liquid
 
-Crypto exchange (liquid) api client
+Crypto Exchange Liquid Ruby Api Client
+- [Api Document](https://developers.liquid.com/#introduction)
 
 ## Installation
 
@@ -27,23 +28,25 @@ Or install it yourself as:
 ```rb
 require 'ruby-liquid'
 liquid_client = Liquid::Client.new(token: token, secret: secret)
-# get
+pair = "BTCJPY"
 liquid_client.product
-liquid_client.product_id("BCHJPY")
+liquid_client.product_id(pair)
 liquid_client.orders
 liquid_client.active_orders
 liquid_client.balance
-liquid_client.limit_buy_price
-liquid_client.limit_sell_price
-# post
-liquid_client.create_order(pair: "BCHJPY", side: 'buy', quantity: 0.01, price: 40000)
-# put
+liquid_client.limit_buy_price(pair)
+liquid_client.limit_sell_price(pair)
+liquid_client.create_order(pair: pair, side: 'buy', quantity: 0.01, price: 40000)
 liquid_client.cancel_order(id)
 ```
 
 ## Contributing
 
-wip
+Fork it ( https://github.com/emono/ruby-liquid )
+Create your feature branch (git checkout -b my-new-feature)
+Commit your changes (git commit -am 'Add some feature')
+Push to the branch (git push origin my-new-feature)
+Create a new Pull Request
 
 ## License
 
