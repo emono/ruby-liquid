@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ruby-liquid (0.1.5)
+    ruby-liquid (0.1.6)
 
 GEM
   remote: https://rubygems.org/
