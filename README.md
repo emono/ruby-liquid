@@ -52,3 +52,9 @@ Create a new Pull Request
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
+## Donation
+- [BTC]address: 1JXN9W2M3UDVKmUtKg8J643JLRrf8HmRzK
+- [ETH]address: 0x3dccb7efdd5a961e7731f511b8dc09a09616d6eb
+- [XRP]address: rNQEMJA4PsoSrZRn9J6RajAYhcDzzhf8ok tag: 1000000006
+- [MONA]address: PAjK9cMqLrrkDr5rDvPqFwkXVHBZkKgjYF
+
