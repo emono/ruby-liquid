@@ -1,6 +1,6 @@
 RSpec.describe Liquid do
   it "has a version number" do
-    expect(Liquid::VERSION).to eq("0.1.6")
+    expect(Liquid::VERSION).to eq("0.1.7")
   end
 
   context ".product_detail" do
